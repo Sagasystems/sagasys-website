@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Menu } from "lucide-react";
 import { X } from "lucide-react";
 
@@ -41,27 +41,27 @@ export default function MenuNav() {
         </div>
         <ul className="menu-wrapper md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-2 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
           <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-cyan-500 duration-500">
+            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
               Início
             </a>
           </li>
           <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-cyan-500 duration-500">
+            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
               Sobre
             </a>
           </li>
           <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-cyan-500 duration-500">
+            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
               Serviços
             </a>
           </li>
           <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-cyan-500 duration-500">
+            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
               Portfólio
             </a>
           </li>
           <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-cyan-500 duration-500">
+            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
               Contato
             </a>
           </li>
