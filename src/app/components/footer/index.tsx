@@ -4,8 +4,8 @@ import { Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="shadow md:h-[70px] bg-white flex items-center justify-center py-4 px-2 md:px-0 md:py-0">
-      <div className="max-w-7xl flex items-center justify-between w-full flex-col-reverse gap-4 md:flex-row">
+    <div className="shadow-md md:h-[70px] bg-white flex items-center justify-center py-4 px-2 md:px-0 md:py-0">
+      <div className="max-w-7xl flex items-center justify-between w-full flex-col-reverse gap-4 md:flex-row text-center">
         <div>
           <span>©Copyright 2024 SagaSys. Todos os direitos reservados</span>
         </div>

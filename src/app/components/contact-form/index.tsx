@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -8,18 +8,56 @@ export default function ContactForm() {
   const [about, setAbout] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
+    e.preventDefault();
+
+    if (name == "" && email == "") {
+      setLoading(false);
+      alert("Por favor, preencha todos os campos");
+      return false;
+    }
+
+    await fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify({ name, email, about }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        if (data && data.id) {
+          alert(
+            `Obrigado pelo interesse em nossos serviços ${name}, assim que possível entraremos em contato!`
+          );
+          setName("");
+          setEmail("");
+        } else {
+          alert("Desculpe, ocorreu um erro, tente novamente mais tarde!");
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+        alert("Ooops! unfortunately some error has occurred.");
+      });
+    return true;
+  };
 
   return (
-    <div className="relative flex flex-col gap-4 max-w-7xl my-0 mx-auto h-[60vh] py-8">
+    <div className="relative flex flex-col gap-4 max-w-7xl my-0 mx-auto h-auto min-h-[60vh] py-8">
       <div className="flex flex-col place-items-center gap-4">
-        <h1 className={`m-0 text-center text-3xl font-bold`}>Entre em contato</h1>
+        <h3 className={`m-0 text-3xl font-bold`}>
+          Entre em contato
+        </h3>
         <div className="bg-orange-500 max-w-[10%] h-1 w-full"></div>
-        <span className="m-0 text-center text-md max-w-[60%]">Se você tem alguma dúvida, sugestão, ou deseja saber mais sobre nossos serviços, ficaremos felizes em ouvir você. Na SagaSys, valorizamos a comunicação direta e com nossos clientes.</span>
+        <span className="m-0 text-center text-md max-w-[60%]">
+          Se você tem alguma dúvida, sugestão, ou deseja saber mais sobre nossos
+          serviços, ficaremos felizes em ouvir você. Na SagaSys, valorizamos a
+          comunicação direta e com nossos clientes.
+        </span>
       </div>
       <form
         className="mt-6 flex flex-wrap max-w-[70%] my-0 mx-auto gap-y-4 gap-x-2 z-10 items-center justify-center"
-        onSubmit={handleSubmit}
+        onSubmit={(e) => handleSubmit(e)}
       >
         <label htmlFor="name" className="sr-only">
           Nome
