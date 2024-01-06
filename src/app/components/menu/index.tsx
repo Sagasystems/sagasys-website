@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { X } from "lucide-react";
 import { handleScrollTo } from "@/app/lib/functions";
+import Image from "next/image";
 
 export default function MenuNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,15 @@ export default function MenuNav() {
     <div className="shadow">
       <nav className="h-[70px] z-[10] p-5 bg-white max-w-7xl my-0 mx-auto md:flex md:items-center md:justify-between">
         <div className="flex justify-between items-center ">
-          <span className="color-black">Logo</span>
+          <a href="#">
+            <Image
+              src="/assets/images/sagasys-main-logo.svg"
+              alt="Logo Sagasys"
+              width={80}
+              height={80}
+            />
+          </a>
+
           <span className="color-black text-3xl cursor-pointer mx-2 md:hidden block">
             <Menu onClick={handleMenu} className="menuIcon" />
             <X onClick={handleMenu} className="closeMenuIcon hidden" />
