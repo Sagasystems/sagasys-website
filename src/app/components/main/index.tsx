@@ -19,7 +19,7 @@ export default function MainContent() {
         </div>
       </div>
       <a
-        href="#"
+        href="#about"
         className="rounded absolute mx-auto z-[3] bottom-[130px] bg-white py-4 px-4 hover:bg-orange-500 hover:text-white hover:scale-300 transition-all ease-in-out duration-200 flex items-center justify-center gap-x-2 text-xl"
       >
         Saiba mais

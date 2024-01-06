@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="h-auto min-h-[60vh] max-w-7xl my-0 mx-auto py-8 px-8 md:px-0">
-      <div className="flex flex-col gap-4 justify-start items-start">
+    <div id="about" className="h-[90vh] min-h-[60vh] max-w-7xl my-0 mx-auto py-8 px-8 md:px-0 flex items-start flex-col justify-evenly">
+      <div className="flex flex-col gap-4 items-start justify-start">
         <h3 className="m-0 text-3xl font-bold">
           Sobre a Saga<span className="text-orange-500">sys</span>
         </h3>
-        <div className="bg-orange-500 md:max-w-[9%] h-1 w-full"></div>
+        <div className="bg-orange-500 md:max-w-[45%] h-1 w-full"></div>
       </div>
       <div className="w-full flex justify-between">
         <div className="my-4 md:max-w-[50%] w-full">

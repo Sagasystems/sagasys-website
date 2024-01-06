@@ -46,7 +46,7 @@ export default function MenuNav() {
             </a>
           </li>
           <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
+            <a href="#about" className="text-x1 hover:text-orange-500 duration-500">
               Sobre
             </a>
           </li>
@@ -55,13 +55,13 @@ export default function MenuNav() {
               Serviços
             </a>
           </li>
-          <li className="mx-0 my-4 md:my-0 md:mx-4">
+          {/* <li className="mx-0 my-4 md:my-0 md:mx-4">
             <a href="#" className="text-x1 hover:text-orange-500 duration-500">
               Portfólio
             </a>
-          </li>
+          </li> */}
           <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
+            <a href="#contact" className="text-x1 hover:text-orange-500 duration-500">
               Contato
             </a>
           </li>
