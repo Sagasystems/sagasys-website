@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="h-[auto] min-h-[100vh] max-w-7xl my-0 mx-auto py-8 px-8 md:px-0 flex items-start flex-col justify-evenly"
+      className="h-[auto] min-h-[100vh] max-w-7xl my-0 mx-auto p-8 md:px-0 flex items-start flex-col justify-evenly"
     >
       <div className="flex flex-col gap-4 items-start justify-start">
         <h3 className="m-0 text-3xl font-bold">

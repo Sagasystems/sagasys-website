@@ -4,7 +4,7 @@ import { Code, Paintbrush, TabletSmartphone } from "lucide-react";
 export default function Servicing() {
   return (
     <div id="servicing" className="bg-slate-200 w-full h-auto">
-      <div className="h-[auto] min-h-[100vh] max-w-7xl my-0 mx-auto py-8 px-8 md:px-0 flex items-start flex-col justify-evenly gap-4 md:gap-0">
+      <div className="min-h-[700px] h-screen max-w-7xl my-0 mx-auto py-8 px-8 md:px-0 flex items-start flex-col justify-evenly gap-4 md:gap-0">
         <div className="flex flex-col gap-4 items-start justify-end">
           <h3 className="m-0 text-3xl font-bold">Serviços</h3>
           <div className="bg-orange-500 md:max-w-[45%] h-1 w-full"></div>
