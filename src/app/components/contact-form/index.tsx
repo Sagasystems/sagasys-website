@@ -44,10 +44,13 @@ export default function ContactForm() {
   };
 
   return (
-    <div id="contact" className="relative flex flex-col gap-4 max-w-7xl my-0 mx-auto h-auto min-h-[60vh] py-8">
+    <div
+      id="contact"
+      className="relative flex flex-col gap-4 max-w-7xl my-0 mx-auto h-auto min-h-[60vh] py-8"
+    >
       <div className="flex flex-col place-items-center gap-4">
         <h3 className={`m-0 text-3xl font-bold`}>Entre em contato</h3>
-        <div className="bg-orange-500 max-w-[10%] h-1 w-full"></div>
+        <div className="bg-orange-500 h-1 w-[70%] md:max-w-[10%]"></div>
         <span className="m-0 text-center text-md max-w-[60%]">
           Se você tem alguma dúvida, sugestão, ou deseja saber mais sobre nossos
           serviços, ficaremos felizes em ouvir você. Na SagaSys, valorizamos a
@@ -102,7 +105,7 @@ export default function ContactForm() {
         />
         <button
           type="submit"
-          className="flex justify-center rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-80 md:w-full"
+          className="flex justify-center rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-80 w-full"
         >
           {loading ? (
             <div

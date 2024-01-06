@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div id="about" className="h-[90vh] min-h-[60vh] max-w-7xl my-0 mx-auto py-8 px-8 md:px-0 flex items-start flex-col justify-evenly">
+    <div
+      id="about"
+      className="h-[auto] min-h-[100vh] max-w-7xl my-0 mx-auto py-8 px-8 md:px-0 flex items-start flex-col justify-evenly"
+    >
       <div className="flex flex-col gap-4 items-start justify-start">
         <h3 className="m-0 text-3xl font-bold">
           Sobre a Saga<span className="text-orange-500">sys</span>
@@ -38,7 +41,12 @@ export default function About() {
           <p className="my-2">Seja bem-vindo à nossa história!</p>
         </div>
         <div className="max-w-[50%] hidden md:block">
-            <Image src="/assets/images/dev-image-about.svg" alt="Imagem ilustrativa de dev" width={500} height={200}/>
+          <Image
+            src="/assets/images/dev-image-about.svg"
+            alt="Imagem ilustrativa de dev"
+            width={500}
+            height={200}
+          />
         </div>
       </div>
     </div>
