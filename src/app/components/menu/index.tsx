@@ -21,26 +21,26 @@ export default function MenuNav() {
     if (!isMenuOpen) {
       menuIcon.style.display = "none";
       closeMenuIcon.style.display = "block";
-      menuWrapper.classList.add("top-[70px]", "opacity-100");
+      menuWrapper.classList.add("top-[80px]", "opacity-100");
       setIsMenuOpen(!isMenuOpen);
     } else {
       closeMenuIcon.style.display = "none";
       menuIcon.style.display = "block";
-      menuWrapper.classList.remove("top-[70px]", "opacity-100");
+      menuWrapper.classList.remove("top-[80px]", "opacity-100");
       setIsMenuOpen(!isMenuOpen);
     }
   }
 
   return (
     <div className="shadow">
-      <nav className="h-[70px] z-[10] p-5 bg-white max-w-7xl my-0 mx-auto md:flex md:items-center md:justify-between">
+      <nav className="min-h-[70px] h-[auto] z-[10] p-5 bg-white max-w-7xl my-0 mx-auto md:flex md:items-center md:justify-between">
         <div className="flex justify-between items-center ">
           <a href="#">
             <Image
-              src="/assets/images/sagasys-main-logo.svg"
+              src="/assets/images/sagasys-logo.svg"
               alt="Logo Sagasys"
-              width={80}
-              height={80}
+              width={40}
+              height={40}
             />
           </a>
 

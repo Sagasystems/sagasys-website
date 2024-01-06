@@ -10,13 +10,13 @@ export default function MainContent() {
       <div className="z-[3] w-full h-full flex items-center justify-center max-w-7xl">
         <div className="flex-col items-center justify-center text-center">
           <p className="text-white text-2xl my-2">Bem-vindo a</p>
-          <h1 className="text-8xl text-white my-1 mb-4 font-medium">
+          <h1 className="text-6xl md:text-8xl text-white my-1 mb-4 font-medium">
             Saga<span className="text-orange-500">sys</span>
           </h1>
-          <p className="text-white text-2xl mt-10">
+          <p className="text-white text-xl md:text-2xl mt-10">
             Seja bem-vindo à nossa plataforma de inovação e descoberta digital.{" "}
           </p>
-          <p className="text-white text-2xl my-1 mt-2">
+          <p className="text-white text-xl md:text-2xl my-1 mt-2">
             Juntos, transformamos ideias em realidade.
           </p>
         </div>
