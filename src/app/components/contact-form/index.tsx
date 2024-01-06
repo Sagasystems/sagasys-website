@@ -25,12 +25,13 @@ export default function ContactForm() {
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
-        if (data && data.id) {
+        if (data) {
           alert(
             `Obrigado pelo interesse em nossos serviços ${name}, assim que possível entraremos em contato!`
           );
           setName("");
           setEmail("");
+          setAbout("")
         } else {
           alert("Desculpe, ocorreu um erro, tente novamente mais tarde!");
         }

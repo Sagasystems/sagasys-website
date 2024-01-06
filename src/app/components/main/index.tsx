@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function MainContent() {
   return (
-    <div className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center">
+    <div className="relative w-full min-h-[100vh] h-[100vh] overflow-hidden flex items-center justify-center">
       <div className="absolute z-[3] w-full h-full flex items-center justify-center max-w-7xl">
         <div className="flex-col items-center justify-center text-center">
           <p className="text-white text-2xl my-2">Bem-vindo a</p>

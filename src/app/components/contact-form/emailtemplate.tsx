@@ -16,3 +16,5 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     <p>{about}</p>
   </div>
 );
+
+export default EmailTemplate;
