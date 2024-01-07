@@ -54,7 +54,7 @@ export default function ContactForm() {
         <span className="m-0 text-center text-md max-w-[60%]">
           Se você tem alguma dúvida, sugestão, ou deseja saber mais sobre nossos
           serviços, ficaremos felizes em ouvir você. Na SagaSys, valorizamos a
-          comunicação direta e com nossos clientes.
+          comunicação direta com nossos clientes.
         </span>
       </div>
       <form
