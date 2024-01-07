@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 interface EmailTemplateProps {
   name: string;
@@ -9,11 +9,12 @@ interface EmailTemplateProps {
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
   email,
-  about
+  about,
 }) => (
   <div>
     <h1>{name}, Acabou de enviar uma mensagem!</h1>
     <p>{about}</p>
+    <p>Responda a ele no email {email}</p>
   </div>
 );
 
