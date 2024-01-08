@@ -19,8 +19,11 @@ export async function POST(req: Request, res: NextApiResponse) {
         about: about,
       }) as React.ReactElement,
     });
-    return Response.json(data);
+    return Response.json({ status: 200, data: data });
   } catch (err) {
-    return Response.json({ err });
+    return Response.json({
+      status: 500,
+      data: "Erro ao enviar mensagem, tente novamente mais tarde!",
+    });
   }
 }

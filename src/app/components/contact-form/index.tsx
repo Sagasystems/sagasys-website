@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Swal from "sweetalert2";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -25,20 +26,36 @@ export default function ContactForm() {
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
-        if (data) {
-          alert(
-            `Obrigado pelo interesse em nossos serviços ${name}, assim que possível entraremos em contato!`
-          );
+        if (data.status == 200) {
+          Swal.fire({
+            icon: "success",
+            title: "Mensagem enviada",
+            html: `<p>Olá, ${name}</p><p>Agradecemos o contato e assim que possível iremos retornar!</p>`,
+            confirmButtonColor: "#ED8936",
+            confirmButtonText: "Ok",
+          });
           setName("");
           setEmail("");
           setAbout("");
         } else {
-          alert("Desculpe, ocorreu um erro, tente novamente mais tarde!");
+          Swal.fire({
+            icon: "error",
+            title: "Desculpe",
+            html: `<p>Olá, ${name}</p><p>Infelizmente houve um erro ao enviar sua mensagem, por favor tente novamente mais tarde!</p>`,
+            confirmButtonColor: "#ED8936",
+            confirmButtonText: "Ok",
+          });
         }
       })
       .catch((err) => {
         setLoading(false);
-        alert("Ooops! unfortunately some error has occurred.");
+        Swal.fire({
+          icon: "error",
+          title: "Desculpe",
+          html: `<p>Olá, ${name}</p><p>Infelizmente houve um erro ao enviar sua mensagem, por favor tente novamente mais tarde!</p>`,
+          confirmButtonColor: "#ED8936",
+          confirmButtonText: "Ok",
+        });
       });
     return true;
   };
