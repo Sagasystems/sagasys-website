@@ -12,7 +12,7 @@ export default function Projects() {
       </div>
       <div className="flex flex-wrap w-full gap-8 justify-between">
         <ProjectCard
-          imageSrc="/assets/images/projects/marianafestas-bg.jpg"
+          imageSrc="/assets/images/projects/marianafestas.jpg"
           project="Mariana Festas"
           description="Criação de uma landing page para uma empresa de promoção de eventos infantis. Prospecção de clientes e redirecionamento do cliente para o whatsapp. Fotos e cadastramento de clientes."
           dataWork="Maio 2023"
