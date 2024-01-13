@@ -31,7 +31,7 @@ export default function BackToTopButton() {
 
   return (
     <motion.button
-      className="fixed rounded bottom-8 right-8 p-4 bg-orange-500 hover:bg-white transition-all ease-in duration-100 group"
+      className="fixed rounded bottom-8 right-8 p-4 bg-orange-500 hover:bg-white transition-all ease-in duration-100 group z-[9999]"
       onClick={scrollToTop}
       variants={ScrollToTopContainerVariants}
       initial="hide"

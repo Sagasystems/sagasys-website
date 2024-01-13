@@ -36,6 +36,7 @@ export default function MainContent() {
         fill
         className="absolute z-[1]"
         objectFit="cover"
+        loading="lazy"
       />
     </div>
   );

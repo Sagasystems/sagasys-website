@@ -74,11 +74,14 @@ export default function MenuNav() {
               Serviços
             </a>
           </li>
-          {/* <li className="mx-0 my-4 md:my-0 md:mx-4">
-            <a href="#" className="text-x1 hover:text-orange-500 duration-500">
+          <li className="mx-0 my-4 md:my-0 md:mx-4">
+            <a
+              className="text-x1 hover:text-orange-500 duration-500 cursor-pointer"
+              onClick={() => handleScrollTo("projects")}
+            >
               Portfólio
             </a>
-          </li> */}
+          </li>
           <li className="mx-0 my-4 md:my-0 md:mx-4">
             <a
               className="text-x1 hover:text-orange-500 duration-500 cursor-pointer"

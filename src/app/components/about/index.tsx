@@ -46,6 +46,7 @@ export default function About() {
             alt="Imagem ilustrativa de dev"
             width={500}
             height={200}
+            loading="lazy"
           />
         </div>
       </div>
