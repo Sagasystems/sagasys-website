@@ -1,21 +1,45 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import Swal from "sweetalert2";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [about, setAbout] = useState("");
   const [loading, setLoading] = useState(false);
+  const [captcha, setCaptcha] = useState<string | null>();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     setLoading(true);
     e.preventDefault();
 
-    if (name == "" && email == "") {
+    if (!captcha) {
+      Swal.fire({
+        icon: "error",
+        title: "Erro",
+        html: "Por favor marque a opção <b>Não sou um robô</b> para continuar",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#ED8936",
+      });
+
       setLoading(false);
-      alert("Por favor, preencha todos os campos");
+
+      return false;
+    }
+
+    if (name == "" || email == "" || about == "" || !captcha) {
+      setLoading(false);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Por favor preencha todos os campos",
+        confirmButtonColor: "#ED8936",
+        confirmButtonText: "OK",
+      });
+
+      setLoading(false);
       return false;
     }
 
@@ -33,6 +57,10 @@ export default function ContactForm() {
             html: `<p>Olá, ${name}</p><p>Agradecemos o contato e assim que possível iremos retornar!</p>`,
             confirmButtonColor: "#ED8936",
             confirmButtonText: "Ok",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.reload();
+            }
           });
           setName("");
           setEmail("");
@@ -44,6 +72,10 @@ export default function ContactForm() {
             html: `<p>Olá, ${name}</p><p>Infelizmente houve um erro ao enviar sua mensagem, por favor tente novamente mais tarde!</p>`,
             confirmButtonColor: "#ED8936",
             confirmButtonText: "Ok",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.reload();
+            }
           });
         }
       })
@@ -55,6 +87,10 @@ export default function ContactForm() {
           html: `<p>Olá, ${name}</p><p>Infelizmente houve um erro ao enviar sua mensagem, por favor tente novamente mais tarde!</p>`,
           confirmButtonColor: "#ED8936",
           confirmButtonText: "Ok",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.reload();
+          }
         });
       });
     return true;
@@ -118,21 +154,27 @@ export default function ContactForm() {
             placeholder="Digite sua mensagem"
             onChange={(e) => setAbout(e.target.value)}
           />
-          <button
-            type="submit"
-            className="flex justify-center rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-80 w-full"
-          >
-            {loading ? (
-              <div
-                style={{
-                  borderTopColor: "transparent",
-                }}
-                className="w-6 h-6 border-4 border-white border-solid rounded-full animate-spin"
-              ></div>
-            ) : (
-              "Enviar mensagem"
-            )}
-          </button>
+          <div className="w-full flex md:flex-row flex-col items-center justify-center gap-4 h-auto max-h-[95px]">
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              onChange={setCaptcha}
+            />
+            <button
+              type="submit"
+              className="flex justify-center rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-80 w-full md:h-[80px] h-auto items-center"
+            >
+              {loading ? (
+                <div
+                  style={{
+                    borderTopColor: "transparent",
+                  }}
+                  className="w-6 h-6 border-4 border-white border-solid rounded-full animate-spin"
+                ></div>
+              ) : (
+                "Enviar mensagem"
+              )}
+            </button>
+          </div>
         </form>
       </div>
     </div>
